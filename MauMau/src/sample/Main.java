@@ -13,7 +13,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage startStage) throws Exception{
+
         PRIMARYSTAGE = startStage;
+        PRIMARYSTAGE.setResizable(false);
 
         rootStartScreen = FXMLLoader.load(getClass().getResource("StartScreen.fxml"));
         rootPlayScreen = FXMLLoader.load(getClass().getResource("PlayScreen.fxml"));

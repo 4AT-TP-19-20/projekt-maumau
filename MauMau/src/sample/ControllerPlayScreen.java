@@ -1,7 +1,5 @@
 package sample;
 
-
-
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
@@ -91,6 +89,14 @@ public class ControllerPlayScreen {
                 btnStart1.setStyle("-fx-background-color: #41d9c4; -fx-background-insets: 1; -fx-border-color: #ffffff; -fx-border-radius: 5;");
             });
 
+            btnNext.setOnMouseEntered(actionEvent -> {
+                btnNext.setStyle("-fx-background-color: #20b5d9; -fx-background-insets: 1; -fx-border-color: #ffffff; -fx-border-radius: 5;");
+            });
+
+            btnNext.setOnMouseExited(actionEvent -> {
+                btnNext.setStyle("-fx-background-color: #41d9c4; -fx-background-insets: 1; -fx-border-color: #ffffff; -fx-border-radius: 5;");
+            });
+
             btnStart1.setOnMouseClicked(actionEvent -> {
                 sp1 = new Spieler(JOptionPane.showInputDialog(null,"Name Spieler1:"));
                 sp2 = new Spieler(JOptionPane.showInputDialog(null,"Name Spieler2:"));
@@ -141,8 +147,17 @@ public class ControllerPlayScreen {
         System.out.println(sp.name + " "+effect);
         Button tempButton = new Button();
         tempButton.setText(sp.name + " ist dran!");
+        tempButton.setStyle("-fx-pref-height: 39; -fx-pref-width: 93; -fx-background-color: #41D9C4; -fx-background-insets: 1; -fx-border-color: #ffffff; -fx-border-radius: 5;");
         Spieler finalSp = sp;
         int finalEffect = effect;
+
+        tempButton.setOnMouseEntered(actionEvent->{
+            tempButton.setStyle("-fx-pref-height: 39; -fx-pref-width: 93;-fx-background-color: #20b5d9; -fx-background-insets: 1; -fx-border-color: #ffffff; -fx-border-radius: 5;");
+        });
+        tempButton.setOnMouseExited(actionEvent ->{
+            tempButton.setStyle("-fx-pref-height: 39; -fx-pref-width: 93; -fx-background-color: #41D9C4; -fx-background-insets: 1; -fx-border-color: #ffffff; -fx-border-radius: 5;");
+        });
+
         tempButton.setOnMouseClicked(actionEvent1 -> {
             spielRunde(finalSp, finalEffect);
         });
