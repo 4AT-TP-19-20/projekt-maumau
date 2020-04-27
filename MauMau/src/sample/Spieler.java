@@ -11,15 +11,15 @@ public class Spieler {
         this.name = name;
     }
 
-    public void addKarte(Karte karte){
-        if(karte!=null){
+    public void addKarte(Karte karte) {
+        if (karte != null) {
             akutelleKarten.add(karte);
         }
     }
 
-    public boolean hasOber(){
-        for(Karte k : akutelleKarten) {
-            if(k.getEffect()==11){
+    public boolean hasOber() {
+        for (Karte k : akutelleKarten) {
+            if (k.getEffect() == 11) {
                 return true;
             }
         }

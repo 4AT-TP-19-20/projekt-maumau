@@ -9,7 +9,7 @@ public class ControllerStartScreen {
     public Button playBTN;
     public Button gameInfoBTN;
 
-    public void initialize(){
+    public void initialize() {
         playBTN.setOnAction(actionEvent -> {
             Main.PRIMARYSTAGE.setTitle("MauMau");
             Main.PRIMARYSTAGE.setScene(new Scene(Main.rootPlayScreen, 843, 534));
@@ -25,7 +25,7 @@ public class ControllerStartScreen {
         });
 
         gameInfoBTN.setOnAction(actionEvent -> {
-            JOptionPane.showMessageDialog(null,"Developed by: HausiPhileMez inc.\n\n--------------------------------Spiel Info--------------------------------\n" +
+            JOptionPane.showMessageDialog(null, "Developed by: HausiPhileMez inc.\n\n--------------------------------Spiel Info--------------------------------\n" +
                     "- Um ein Spiel zu Starten, drücken Sie den \"Play\" Button.\n" +
                     "- Anschließend werden Sie zur Spieloberfläche weitergeleitet.\n" +
                     "- Am rechten oberen Bereich der Spieleoberfläche befindet sich ein Start Knopf.\n" +
@@ -65,9 +65,5 @@ public class ControllerStartScreen {
         gameInfoBTN.setOnMouseExited(actionEvent -> {
             gameInfoBTN.setStyle("-fx-background-color: #41d9c4; -fx-background-insets: 1; -fx-border-color: #ffffff; -fx-border-radius: 5;");
         });
-
     }
-
-
-
 }

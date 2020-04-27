@@ -12,7 +12,7 @@ public class Main extends Application {
     public static Parent rootStartScreen, rootPlayScreen;
 
     @Override
-    public void start(Stage startStage) throws Exception{
+    public void start(Stage startStage) throws Exception {
 
         PRIMARYSTAGE = startStage;
         PRIMARYSTAGE.setResizable(false);
@@ -26,9 +26,7 @@ public class Main extends Application {
         startStage.show();
     }
 
-
     public static void main(String[] args) {
-
         launch(args);
     }
 }

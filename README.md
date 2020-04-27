@@ -1,6 +1,6 @@
 # MauMau
 
-Das traditionelle tiroler Kartenspiel jetzt auf PC. 
+Das traditionelle tiroler Kartenspiel jetzt auf PC!
 
 
 ### Voraussetzungen
@@ -8,17 +8,17 @@ Das traditionelle tiroler Kartenspiel jetzt auf PC.
 Die unten angeführte Software und Hardware wird benötigt um das Spiel spielen zu können.
 
 ```
-Mindestens Java 8
-Rechenfähiger PC
-Maus
-Tastatur
-Bildschirm
+- Mindestens Java 8
+- Rechenfähiger PC
+- Maus
+- Tastatur
+- Bildschirm
 ```
 
 
 ## Entwicklungsumgebungen
 
-Für die Entwicklung dieses Spiels wurden folgende Entwicklungstools Verwendet :
+Für die Entwicklung dieses Spiels wurden folgende Entwicklungsumgebungen Verwendet :
 
 
 * [IntelliJ IDEA 2019.2.3](https://www.jetbrains.com/de-de/idea/) - Programmieren
@@ -31,6 +31,12 @@ Wir haben [GitHub](https://github.com/) für die Versionsverwaltung benutzt. All
 
 ### Versionen
 
+
+- 6.0 (Fertiges Programm)
+	- STYLE: Code formatiert
+	- DOCS: Pflichtenheft hinzugefügt
+	- DOCS: README upgedated
+	- Jar file hinzugefügt
 - 5.0
 	- FEAT: Game Info hinzugefügt 
 	- REFACTOR: Allgemeine UX verschönerung
