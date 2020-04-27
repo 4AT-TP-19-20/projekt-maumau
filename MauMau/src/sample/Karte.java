@@ -2,9 +2,6 @@ package sample;
 
 import javafx.scene.image.Image;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -29,9 +26,9 @@ public class Karte {
         if(karten!=null && karten.size()>0) {
             return karten.remove(0);
         }
-        if(karten != null && Spiel.kartenStapel.size()>1){
-            List<Karte> tempStapel = Spiel.kartenStapel.subList(0,Spiel.kartenStapel.size()-2);
-            Spiel.kartenStapel.removeAll(tempStapel);
+        if(karten != null && ControllerPlayScreen.kartenStapel.size()>1){
+            List<Karte> tempStapel = ControllerPlayScreen.kartenStapel.subList(0,ControllerPlayScreen.kartenStapel.size()-2);
+            ControllerPlayScreen.kartenStapel.removeAll(tempStapel);
             karten.addAll(tempStapel);
             Collections.shuffle(karten);
             return karten.remove(0);
@@ -49,22 +46,27 @@ public class Karte {
         this.farbe = farbe;
         this.symbol = symbol;
         switch (symbol){
-
+            case 12:
+                effect=11;
+                break;
+            case 9:
+                effect=1;
+                break;
+            case 14:
+                effect=3;
+                break;
+            default:
+                effect=0;
+                break;
         }
-        image = new Image(getClass().getResource("/karten/"+farbe+"_"+symbol+".png").toExternalForm());
+        image = new Image(getClass().getResource("/img/karten/" +farbe+"_"+symbol+".png").toExternalForm());
     }
 
     public Image getImage(){
         return image;
     }
 
-    /**
-     *
-     * @return 0 nichts
-     * @return 1 tafn
-     * @return 2 auklaubm
-     * @return 3 auslossn
-     */
+
     public int getEffect(){
         return effect;
     }

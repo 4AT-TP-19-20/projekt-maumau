@@ -10,7 +10,7 @@
    <Pane fx:id="mainPane" prefHeight="312.0" prefWidth="843.0">
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2d2d2d" height="202.0" layoutX="256.0" layoutY="48.0" stroke="#41d9c4" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="108.0" />
       <ImageView fx:id="karte" fitHeight="200.0" fitWidth="116.0" layoutX="461.0" layoutY="49.0" rotate="-1.0">
-         <Image url="@../Karte.png" />
+         <Image url="@../img/Karte.png" />
       </ImageView>
       <Button fx:id="btnImg" layoutX="472.0" layoutY="61.0" mnemonicParsing="false" prefHeight="176.0" prefWidth="95.0" text="img" visible="false" />
       <Button fx:id="btnNext" layoutX="686.0" layoutY="143.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="59.0" style="-fx-background-color: cyan;" text="Next" visible="false" />
