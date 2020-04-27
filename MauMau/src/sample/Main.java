@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
     public static Stage PRIMARYSTAGE;
-    public static Parent rootStartScreen, rootPlayScreen, rootEndScreen;
+    public static Parent rootStartScreen, rootPlayScreen;
 
     @Override
     public void start(Stage startStage) throws Exception{
@@ -17,7 +17,6 @@ public class Main extends Application {
 
         rootStartScreen = FXMLLoader.load(getClass().getResource("StartScreen.fxml"));
         rootPlayScreen = FXMLLoader.load(getClass().getResource("PlayScreen.fxml"));
-        rootEndScreen = FXMLLoader.load(getClass().getResource("EndScreen.fxml"));
 
         Parent root = FXMLLoader.load(getClass().getResource("StartScreen.fxml"));
         startStage.setTitle("MauMau");

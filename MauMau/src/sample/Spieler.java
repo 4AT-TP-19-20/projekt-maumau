@@ -25,7 +25,4 @@ public class Spieler {
         }
         return false;
     }
-    // vector spieler
-    //spieler=new Vector
-    //spieler.add newSpieler(name)
 }

@@ -200,35 +200,36 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="371" y="89" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1587375549308">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="742" y="183" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1587986123921">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="371" y="89" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1587375549308" />
-    <state x="842" y="200" key="FileChooserDialogImpl" timestamp="1587927221154">
+    <state x="742" y="183" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1587986123921" />
+    <state x="842" y="200" key="FileChooserDialogImpl" timestamp="1587927266012">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="421" y="97" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1587376213398" />
-    <state x="842" y="200" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1587927221154" />
-    <state width="2517" height="401" key="GridCell.Tab.0.bottom" timestamp="1587990398372">
+    <state x="842" y="200" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1587927266012" />
+    <state width="2517" height="401" key="GridCell.Tab.0.bottom" timestamp="1587986151005">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1237" height="160" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1587377234282" />
-    <state width="2517" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1587990398372" />
-    <state width="2517" height="401" key="GridCell.Tab.0.center" timestamp="1587990398372">
+    <state width="2517" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1587986151005" />
+    <state width="2517" height="401" key="GridCell.Tab.0.center" timestamp="1587986151005">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1237" height="160" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1587377234282" />
-    <state width="2517" height="401" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1587990398372" />
-    <state width="2517" height="401" key="GridCell.Tab.0.left" timestamp="1587990398372">
+    <state width="2517" height="401" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1587986151005" />
+    <state width="2517" height="401" key="GridCell.Tab.0.left" timestamp="1587986151005">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1237" height="160" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1587377234281" />
-    <state width="2517" height="401" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1587990398372" />
-    <state width="2517" height="401" key="GridCell.Tab.0.right" timestamp="1587990398372">
+    <state width="2517" height="401" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1587986151005" />
+    <state width="2517" height="401" key="GridCell.Tab.0.right" timestamp="1587986151005">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1237" height="160" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1587377234282" />
-    <state width="2517" height="401" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1587990398372" />
+    <state width="2517" height="401" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1587986151005" />
     <state width="2517" height="492" key="GridCell.Tab.1.bottom" timestamp="1587926945103">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

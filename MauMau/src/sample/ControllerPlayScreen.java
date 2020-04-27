@@ -30,7 +30,7 @@ import java.util.ArrayList;
     - Code mit Bilder verbinden, d.h. ArrayList oder ähnliches mit Bildern DONE
     - Bis jetzt wurden bei der GUI nur random Karten dargestellt ohne dokumentation welche Karten bereits verwendet wurden DONE
     - Keine Karte darf doppelt sein DONE
-    - Spielregeln einbauen ONGOING
+    - Spielregeln einbauen DONE
 
      *-1 erste runde tafn
      *
@@ -150,7 +150,58 @@ public class ControllerPlayScreen {
     }
 
     public void showTafn(Spieler sp){
-        //TODO
+        spielerKarten.setDisable(true);
+        karte.setDisable(true);
+
+        tafnBox.getChildren().removeAll(tafnBox.getChildren());
+
+
+        ImageView herz = new ImageView(h);
+        herz.setPreserveRatio(true);
+        herz.setFitHeight(30);
+        herz.setOnMouseClicked(actionEvent1 -> {
+            tafnBox.setVisible(false);
+            spielerKarten.setDisable(false);
+            newCard.setImage(h);
+
+            spielerWechsel(sp,6);
+        });
+        ImageView eichel = new ImageView(e);
+        eichel.setPreserveRatio(true);
+        eichel.setFitHeight(30);
+        eichel.setOnMouseClicked(actionEvent1 -> {
+            tafnBox.setVisible(false);
+            spielerKarten.setDisable(false);
+            newCard.setImage(e);
+
+            spielerWechsel(sp,9);
+        });
+        ImageView lab = new ImageView(l);
+        lab.setPreserveRatio(true);
+        lab.setFitHeight(30);
+        lab.setOnMouseClicked(actionEvent1 -> {
+            tafnBox.setVisible(false);
+            spielerKarten.setDisable(false);
+            newCard.setImage(l);
+
+            spielerWechsel(sp, 7);
+        });
+        ImageView schell = new ImageView(s);
+        schell.setPreserveRatio(true);
+        schell.setFitHeight(30);
+        schell.setOnMouseClicked(actionEvent1 -> {
+            tafnBox.setVisible(false);
+            spielerKarten.setDisable(false);
+            newCard.setImage(s);
+
+            spielerWechsel(sp, 8);
+        });
+        tafnBox.getChildren().add(herz);
+        tafnBox.getChildren().add(lab);
+        tafnBox.getChildren().add(schell);
+        tafnBox.getChildren().add(eichel);
+
+        tafnBox.setVisible(true);
     }
 
     public void spielRunde(Spieler sp, int effect){
@@ -202,10 +253,8 @@ public class ControllerPlayScreen {
                         sp.akutelleKarten.remove(k);
                         newCard.setImage(k.getImage());
                         if(sp.akutelleKarten.size()<1){
-
-                            Main.PRIMARYSTAGE.setTitle("MauMau");
-                            Main.PRIMARYSTAGE.setScene(new Scene(Main.rootEndScreen, 843, 534));
-                            Main.PRIMARYSTAGE.show();
+                            JOptionPane.showMessageDialog(null,sp.name+" hat gewonnen!");
+                            Main.PRIMARYSTAGE.close();
                         }else{
                             spielerWechsel(sp,k.getEffect());
                         }
@@ -216,13 +265,8 @@ public class ControllerPlayScreen {
                         sp.akutelleKarten.remove(k);
                         newCard.setImage(k.getImage());
                         if(sp.akutelleKarten.size()<1){
-
-                            Main.PRIMARYSTAGE.setTitle("MauMau");
-                            Main.PRIMARYSTAGE.setScene(new Scene(Main.rootEndScreen, 843, 534));
-                            Main.PRIMARYSTAGE.show();
-
-
-                            //JOptionPane.showMessageDialog(null,sp.name+" hat gewonnen!");
+                            JOptionPane.showMessageDialog(null,sp.name+" hat gewonnen!");
+                            Main.PRIMARYSTAGE.close();
                         }else {
                             spielerWechsel(sp, k.getEffect());
                         }
@@ -234,12 +278,8 @@ public class ControllerPlayScreen {
                         newCard.setImage(k.getImage());
                         if(sp.akutelleKarten.size()<1){
 
-                            Main.PRIMARYSTAGE.setTitle("MauMau");
-                            Main.PRIMARYSTAGE.setScene(new Scene(Main.rootEndScreen, 843, 534));
-                            Main.PRIMARYSTAGE.show();
-
                         }else {
-                            spielerWechsel(sp, finalEffect[0]++);
+                            spielerWechsel(sp, finalEffect[0]+1);
                         }
                     }
                 }
