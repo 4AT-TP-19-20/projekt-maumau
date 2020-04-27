@@ -1,15 +1,14 @@
 package sample;
 
-import java.util.Iterator;
-import java.util.Random;
-import java.util.Vector;
+import javafx.scene.image.ImageView;
+
+import javax.swing.*;
+import java.util.*;
 
 
 public class Spiel{
 
-    public static String[] FARBEN = new String[]{"Herz", "Laub", "Eiche", "Shell"};
-    public static String[] WERTE = new String[]{"Ass", "König", "Ober", "Unter", "10", "9", "8", "7"};
-    public boolean spielFertig=false;
+    public static boolean spielFertig=false;
 
 
     /*
@@ -26,21 +25,17 @@ public class Spiel{
     - Random Karten einblenden - DONE
     - Random Karten einblenden falls Startknopf betätigt - DONE
     - Wenn man keine Karte hat, auf Kartenstapel klicken um neue Karte zu erhalten - DONE
-    - Code mit Bilder verbinden, d.h. ArrayList oder ähnliches mit Bildern
-    - Bis jetzt wurden bei der GUI nur random Karten dargestellt ohne dokumentation welche Karten bereits verwendet wurden
+    - Code mit Bilder verbinden, d.h. ArrayList oder ähnliches mit Bildern DONE
+    - Bis jetzt wurden bei der GUI nur random Karten dargestellt ohne dokumentation welche Karten bereits verwendet wurden DONE
     - Keine Karte darf doppelt sein
     - Spielregeln einbauen
 
      */
 
+    public static ArrayList<Karte> kartenStapel;
 
+    public static void spielStarten() {
 
-    Random rndm = new Random(System.currentTimeMillis());
-    Vector<Karte> kartenStapel;
-
-    void spielStarten() {
-        erstelleKartenStapel();
-        mischeKartenStapel();
         //zeigeKartenStapel();
         //erstelleSpieler();
         //teileAus();
@@ -54,46 +49,10 @@ public class Spiel{
         //reihumKartenLegen();
     }
 
-    void erstelleKartenStapel() {
-        kartenStapel = new Vector<Karte>();
-        for (int i = 0; i < FARBEN.length; i++) {
-            for (int j = 0; j < WERTE.length; j++) {
-                kartenStapel.add(new Karte(FARBEN[i], WERTE[j]));
-            }
+    public static void teileAus(Spieler sp1,Spieler sp2) {
+        for (int i = 0;i<5;i++) {
+            sp1.addKarte(Karte.getKarte());
+            sp2.addKarte(Karte.getKarte());
         }
-    }
-
-    void zeigeKartenStapel() {
-        System.out.println("Kartenstapel:");
-        Iterator<Karte> iterator = kartenStapel.iterator();
-        while (iterator.hasNext()) {
-            Karte karte = iterator.next();
-            System.out.println(karte);
-        }
-    }
-
-    void mischeKartenStapel() {
-        for (int i = 0; i < 1000; i++) {
-            int tauschPartner1 = rndm.nextInt(32);
-            int tauschPartner2 = rndm.nextInt(32);
-            Karte karte1 = kartenStapel.get(tauschPartner1);
-            Karte karte2 = kartenStapel.get(tauschPartner2);
-            kartenStapel.setElementAt(karte2, tauschPartner1);
-            kartenStapel.setElementAt(karte1, tauschPartner2);
-        }
-    }
-
-    void zieheKarte(Spieler spieler) {
-        spieler.akutelleKarten.add(kartenStapel.firstElement());
-        kartenStapel.removeElementAt(0);
-    }
-
-    public void nachsterSpieler(){
-        //spieler++
-    }
-
-
-    public void karteLegen(){
-        // azsgewählte karte
     }
 }

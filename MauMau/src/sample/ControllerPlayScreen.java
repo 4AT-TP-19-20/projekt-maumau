@@ -5,8 +5,13 @@ package sample;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
+//import sun.jvm.hotspot.tools.SysPropsDumper;
 
+import javax.swing.*;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class ControllerPlayScreen {
@@ -14,13 +19,11 @@ public class ControllerPlayScreen {
 
     public ImageView karte;
     public Button btnImg;
+    public Button btnNext;
 
     public ImageView newCard; // Aufliegende Karte
-    public ImageView newCard1; // 1-5 eigene Karten
-    public ImageView newCard2;
-    public ImageView newCard3;
-    public ImageView newCard4;
-    public ImageView newCard5;
+    public HBox spielerKarten;
+    public VBox tafnBox;
 
     public Image image;
     public Image image2;
@@ -29,19 +32,28 @@ public class ControllerPlayScreen {
     public Image image5;
     public Image image6;
 
+    public Image e = new Image(getClass().getResource("/eichel.png").toExternalForm());
+    public Image h = new Image(getClass().getResource("/herz.png").toExternalForm());
+    public Image s = new Image(getClass().getResource("/schell.png").toExternalForm());
+    public Image l = new Image(getClass().getResource("/lab.png").toExternalForm());
+
+    public Image back = new Image(getClass().getResource("/Karte.png").toExternalForm());
+
     public Button btnStart1;
     public Pane mainPane;
 
-    private int a,b,c,d;
-    private boolean startButtonActive=true;
+    private int a, b, c, d;
+    private boolean startButtonActive = true;
 
-    public void initialize(){
+    private static Spieler sp1;
+    private static Spieler sp2;
+
+    public void initialize() {
 
         //karten namen 1-32, random zahl von 1-32 generieren und dann mit to string karte anzeigen i+.jpg
-        int newCardsCounter=0;
+        int newCardsCounter = 0;
 
         try {
-            Random rndm = new Random();
 
             btnStart1.setOnMouseEntered(actionEvent -> {
                 btnStart1.setStyle("-fx-background-color: #20b5d9; -fx-background-insets: 1; -fx-border-color: #ffffff; -fx-border-radius: 5;");
@@ -52,107 +64,80 @@ public class ControllerPlayScreen {
             });
 
             btnStart1.setOnMouseClicked(actionEvent -> {
-                int x = 1 + rndm.nextInt(32);
-                image = new Image("karten/"+x+".png");
-                newCard.setImage(image);
+                sp1 = new Spieler(JOptionPane.showInputDialog("Name Spieler1:"));
+                sp2 = new Spieler(JOptionPane.showInputDialog("Name Spieler2:"));
+                Karte.erstelleKartenStapel();
+
+                Spiel.teileAus(sp1, sp2);
+                Spiel.kartenStapel = new ArrayList<>();
+                Spiel.kartenStapel.add(Karte.getKarte());
+                newCard.setImage(Spiel.kartenStapel.get(Spiel.kartenStapel.size() - 1).getImage());
 
                 mainPane.getChildren().remove(btnStart1);
-                startButtonActive=false;
-
-                if(startButtonActive==false) {
-
-                    x = 1 + rndm.nextInt(32);
-                    int y = x;
-                    image = new Image("karten/" + x + ".png");
-                    image2 = new Image("karten/" + y + ".png");
-                    newCard1.setImage(image);
-
-                    newCard1.setOnMouseClicked(actionEvent1 -> {
-                        newCard.setImage(image2);
-                        newCard1.setImage(null);
-
-                    });
-
-                    x = 1 + rndm.nextInt(32);
-                    a = x;
-                    image = new Image("karten/" + x + ".png");
-                    image3 = new Image("karten/" + a + ".png");
-                    newCard2.setImage(image);
-
-                    newCard2.setOnMouseClicked(actionEvent1 -> {
-                        newCard.setImage(image3);
-                        newCard2.setImage(null);
-
-                    });
-
-
-                    x = 1 + rndm.nextInt(32);
-                    b = x;
-                    image = new Image("karten/" + x + ".png");
-                    image4 = new Image("karten/" + b + ".png");
-                    newCard3.setImage(image);
-
-                    newCard3.setOnMouseClicked(actionEvent1 -> {
-                        newCard.setImage(image4);
-                        newCard3.setImage(null);
-
-                    });
-
-                    x = 1 + rndm.nextInt(32);
-                    c = x;
-                    image = new Image("karten/" + x + ".png");
-                    image5 = new Image("karten/" + c + ".png");
-                    newCard4.setImage(image);
-
-                    newCard4.setOnMouseClicked(actionEvent1 -> {
-                        newCard.setImage(image5);
-                        newCard4.setImage(null);
-
-                    });
-
-                    x = 1 + rndm.nextInt(32);
-                    d = x;
-                    image = new Image("karten/" + x + ".png");
-                    image6 = new Image("karten/" + d + ".png");
-                    newCard5.setImage(image);
-
-                    newCard5.setOnMouseClicked(actionEvent1 -> {
-                        newCard.setImage(image6);
-                        newCard5.setImage(null);
-
-                    });
+                if (Spiel.kartenStapel.get(Spiel.kartenStapel.size() - 1).getEffect() == 1) {
+                    spielerWechsel(sp1, -1);
+                } else {
+                    spielerWechsel(sp2, Spiel.kartenStapel.get(Spiel.kartenStapel.size() - 1).getEffect());
                 }
-
-                karte.setOnMouseClicked(actionEvent1 -> {
-                    int x1 = 1 + rndm.nextInt(32);
-                    image = new Image("karten/"+x1+".png");
-
-                    if(newCard1.getImage()==null){
-                        newCard1.setImage(image);
-                    }else if(newCard2.getImage()==null){
-                        newCard2.setImage(image);
-                    }else if(newCard3.getImage()==null){
-                        newCard3.setImage(image);
-                    }else if(newCard4.getImage()==null){
-                        newCard4.setImage(image);
-                    }else if(newCard5.getImage()==null){
-                        newCard5.setImage(image);
-                    }
-                });
             });
-
-
-
-
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
 
     }
 
-    //newCard = new ImageView(("pfad"));
+    public void spielerWechsel(Spieler sp, int effect) {
+        karte.setDisable(false);
+        btnNext.setVisible(false);
 
+        spielerKarten.getChildren().removeAll(spielerKarten.getChildren());
+        if (effect != 3 && effect != -1 && effect != 1) {
+            if (sp == sp1) {
+                sp = sp2;
+            } else {
+                sp = sp1;
+            }
+        }
 
+        effect = (effect == 3) ? 0 : effect;
 
+        System.out.println(sp.name + " " + effect);
+        Button tempButton = new Button();
+        tempButton.setText(sp.name + " ist dran!");
+        Spieler finalSp = sp;
+        int finalEffect = effect;
+        tempButton.setOnMouseClicked(actionEvent1 -> {
+            spielRunde(finalSp, finalEffect);
+        });
+        spielerKarten.getChildren().add(tempButton);
+    }
+
+    public void showTafn(Spieler sp) {
+
+    }
+
+    public void spielRunde(Spieler sp, int effect) {
+        spielerKarten.getChildren().removeAll(spielerKarten.getChildren());
+        if (effect > 10 && !sp.hasOber()) {
+            for (int i = 0; i < effect % 10; ++i) {
+
+            }
+        } else if (effect > 10) {
+
+            if (effect < 10) {
+
+            }
+
+            for (Karte k : sp.akutelleKarten) {
+
+            }
+            if (effect == -1) {
+                showTafn(sp2);
+            } else if (effect == 1) {
+                showTafn(sp);
+            }
+        }
+
+    }
 }
