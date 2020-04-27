@@ -31,6 +31,9 @@ Wir haben [GitHub](https://github.com/) für die Versionsverwaltung benutzt. All
 
 ### Versionen
 
+- 5.0
+	- FEAT: Game Info hinzugefügt 
+	- REFACTOR: Allgemeine UX verschönerung
 - 4.0
 	- REFACTOR: End Screen durch JOption Pane ersetzt
 	- FEAT: Taufen hinzugefügt
